@@ -1,0 +1,13 @@
+Source: complx
+Section: devel
+Priority: optional
+Maintainer: Brandon Whitehead <tricksterguy87@gmail.com>
+Build-Depends: debhelper (>= 9), cmake, libwxgtk3.0-dev | libwxgtk3.0-gtk3-dev, pkg-config, libglib2.0-dev, liblc3-dev, liblc3-replay, liblc3-plugins
+Standards-Version: 3.9.6
+Homepage: https://github.com/TricksterGuy/complx
+Vcs-Git: https://github.com/TricksterGuy/complx.git
+
+Package: complx
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A GUI LC-3 simulator written using the wxWidgets library. A fully featured LC-3 simulator that features full playback operations of LC-3 Assembly code. Users can play through, and revert instructions. Also advanced debugging functionality through breakpoints, watchpoints, and conditional breakpoints.
