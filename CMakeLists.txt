@@ -22,6 +22,8 @@ include(${wxWidgets_USE_FILE})
 include_directories(${LIBLC3_INCLUDE_DIR})
 include_directories(${LIBLC3_REPLAY_INCLUDE_DIR})
 include_directories(${GLIB2_INCLUDE_DIRS})
+include_directories(include)
+include_directories(source/gen)
 
 # Require C++11 build
 if(NOT CMAKE_CXX_FLAGS MATCHES "-std=(c|gnu)\\+\\+11")
@@ -56,37 +58,38 @@ endif(CMAKE_BUILD_TYPE MATCHES "Debug")
 add_definitions(-DPREFIX=${CMAKE_INSTALL_PREFIX})
 
 set(SRC_COMPLX
-    AddressDialog.cpp
-    AddressDialogDecl.cpp
-    AdvancedLoadDialog.cpp
-    AdvancedLoadDialogDecl.cpp
-    BreakpointDialog.cpp
-    BreakpointDialogDecl.cpp
-    CallStackDialog.cpp
-    CallStackDialogDecl.cpp
-    CallSubroutineDialog.cpp
-    CallSubroutineDialogDecl.cpp
-    ComplxApp.cpp
-    ComplxFrame.cpp
-    ComplxFrameDecl.cpp
-    DebugInfoDialog.cpp
-    DebugInfoDialogDecl.cpp
-    DebugInfoList.cpp
-    GridCellBinaryRenderer.cpp
-    GridCellInfoRenderer.cpp
-    LC3Console.cpp
-    LC3ConsoleDecl.cpp
-    LC3RunThread.cpp
-    MemoryGrid.cpp
-    MemoryView.cpp
-    MemoryViewContainer.cpp
-    MemoryViewFrame.cpp
-    MemoryViewFrameDecl.cpp
-    RunForDialog.cpp
-    RunForDialogDecl.cpp
-    WatchpointDialog.cpp
-    WatchpointDialogDecl.cpp
-    icon32.xpm
+    source/gen/AddressDialogDecl.cpp
+    source/gen/AdvancedLoadDialogDecl.cpp
+    source/gen/BreakpointDialogDecl.cpp
+    source/gen/CallStackDialogDecl.cpp
+    source/gen/CallSubroutineDialogDecl.cpp
+    source/gen/ComplxFrameDecl.cpp
+    source/gen/DebugInfoDialogDecl.cpp
+    source/gen/LC3ConsoleDecl.cpp
+    source/gen/MemoryViewFrameDecl.cpp
+    source/gen/RunForDialogDecl.cpp
+    source/gen/WatchpointDialogDecl.cpp
+
+    source/AddressDialog.cpp
+    source/AdvancedLoadDialog.cpp
+    source/BreakpointDialog.cpp
+    source/CallStackDialog.cpp
+    source/CallSubroutineDialog.cpp
+    source/ComplxApp.cpp
+    source/ComplxFrame.cpp
+    source/DebugInfoDialog.cpp
+    source/DebugInfoList.cpp
+    source/GridCellBinaryRenderer.cpp
+    source/GridCellInfoRenderer.cpp
+    source/LC3Console.cpp
+    source/LC3RunThread.cpp
+    source/MemoryGrid.cpp
+    source/MemoryView.cpp
+    source/MemoryViewContainer.cpp
+    source/MemoryViewFrame.cpp
+    source/RunForDialog.cpp
+    source/WatchpointDialog.cpp
+    source/assets/icon32.xpm
 )
 
 add_executable(
