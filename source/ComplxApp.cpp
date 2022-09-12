@@ -7,7 +7,7 @@
  * License:
  **************************************************************/
 
-#include "icon32.xpm"
+#include "assets/icon32.xpm"
 #include "ComplxApp.hpp"
 #include "ComplxFrame.hpp"
 #include "version.h"
