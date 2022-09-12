@@ -1,6 +1,5 @@
 #include "AdvancedLoadDialog.hpp"
-#include "lc3.hpp"
-#include "lc3_expressions.hpp"
+#include <lc3_all.hpp>
 
 extern lc3_state state;
 
