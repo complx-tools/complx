@@ -26,7 +26,7 @@ jobs:
       run: |
           sudo add-apt-repository -y ppa:tricksterguy87/complx
           sudo apt update -qq
-          sudo apt install -y liblc3-dev liblc3-replay libwxgtk3.0-gtk3-dev
+          sudo apt install -y liblc3-dev liblc3-replay libwxgtk3.0-gtk3-dev libboost-serialization-dev libboost-iostreams-dev
 
     - name: Make build files.
       run: |
