@@ -22,7 +22,7 @@
 #include <algorithm>
 #include <iostream>
 #include <memory>
-#include "icon64.xpm"
+#include "assets/icon64.xpm"
 
 #include "ComplxFrame.hpp"
 #include "MemoryGrid.hpp"
