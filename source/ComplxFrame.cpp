@@ -36,6 +36,7 @@
 #include "RunForDialog.hpp"
 #include "LC3RunThread.hpp"
 #include "version.h"
+#include <lc3_replay.hpp>
 
 lc3_state state;
 
