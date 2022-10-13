@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 # Ignore warnings about rpath behavior on OS X
 cmake_policy(SET CMP0042 NEW)
-project(complx LANGUAGES CXX VERSION 4.20.0)
+project(complx LANGUAGES CXX VERSION 4.20.2)
 include(GNUInstallDirs)
 
 # Add code coverage stuff.

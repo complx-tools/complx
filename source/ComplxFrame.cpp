@@ -37,10 +37,6 @@
 #include "LC3RunThread.hpp"
 #include "version.h"
 
-#ifdef ENABLE_LC3_REPLAY
-#include <lc3_replay.hpp>
-#endif
-
 lc3_state state;
 
 extern ComplxFrame* complxframe;
@@ -1364,7 +1360,6 @@ void ComplxFrame::OnDestroyView(wxCloseEvent& event)
 
 void ComplxFrame::OnSetupReplayString(wxCommandEvent& event)
 {
-#ifdef ENABLE_LC3_REPLAY
     if (Running())
         return;
 
@@ -1401,13 +1396,9 @@ void ComplxFrame::OnSetupReplayString(wxCommandEvent& event)
     }
 
     DoSetupReplayString(replay_str);
-#else
-    wxMessageBox("Support for this menu function was not enabled.", "Error");
-#endif
 }
 void ComplxFrame::OnReloadReplayString(wxCommandEvent& event)
 {
-#ifdef ENABLE_LC3_REPLAY
     if (reload_options.replay_string.empty() || reload_options.file.empty())
     {
         OnSetupReplayString(event);
@@ -1415,14 +1406,10 @@ void ComplxFrame::OnReloadReplayString(wxCommandEvent& event)
     }
 
     DoSetupReplayString(reload_options.replay_string);
-#else
-    wxMessageBox("Support for this menu function was not enabled.", "Error");
-#endif
 }
 
 std::string ComplxFrame::DoAskForReplayString()
 {
-#ifdef ENABLE_LC3_REPLAY
     wxString replay = wxGetTextFromUser("Enter Replay String", "Testing");
     if (replay.IsEmpty())
     {
@@ -1430,14 +1417,10 @@ std::string ComplxFrame::DoAskForReplayString()
         return "";
     }
     return replay.ToStdString();
-#else
-    return "";
-#endif
 }
 
 void ComplxFrame::DoSetupReplayString(const std::string& replay_string)
 {
-#ifdef ENABLE_LC3_REPLAY
     try
     {
         wxFileName filename(reload_options.file);
@@ -1460,7 +1443,6 @@ void ComplxFrame::DoSetupReplayString(const std::string& replay_string)
         wxMessageBox(err, "Error");
         return;
     }
-#endif
 }
 
 /** OnAbout

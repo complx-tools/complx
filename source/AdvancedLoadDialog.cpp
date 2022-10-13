@@ -7,10 +7,6 @@ AdvancedLoadDialog::AdvancedLoadDialog(wxWindow* parent, const LoadingOptions& o
 {
     assemblyFile->SetPath(opts.file);
     replayString->SetValue(opts.replay_string);
-#ifndef ENABLE_LC3_REPLAY
-    replayString->Enable(false);
-    replayString->SetValue("");
-#endif
     consoleInput->SetValue(opts.console_input);
     regInitializer->SetSelection(opts.registers == RANDOMIZE ? 0 : (opts.registers == ZEROED ? 1 : 2));
     if (opts.registers != RANDOMIZE && opts.registers != ZEROED)
@@ -38,9 +34,7 @@ LoadingOptions AdvancedLoadDialog::GetOptions()
         return options;
 
     options.file = file;
-#ifdef ENABLE_LC3_REPLAY
     options.replay_string = replayString->GetValue().ToStdString();
-#endif
     options.console_input = consoleInput->GetValue().ToStdString();
     int ret = -1;
     int error;
