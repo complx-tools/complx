@@ -18,8 +18,6 @@ if(CMAKE_HOST_UNIX)
     pkg_check_modules(GLIB2 REQUIRED glib-2.0)
 endif(CMAKE_HOST_UNIX)
 
-message(${LIBLC3_REPLAY_INCLUDE_DIR})
-
 include(${wxWidgets_USE_FILE})
 include_directories(${LIBLC3_INCLUDE_DIR})
 include_directories(${LIBLC3_REPLAY_INCLUDE_DIR})
